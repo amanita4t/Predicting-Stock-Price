@@ -14,3 +14,9 @@ def get_data(filename):
             dates.append(int(row[0].split'-'[0]))
             prices.append(float(row[1]))
     return 
+
+def predict_prices(dates, prices, x):
+    dates = np.reshape(dates, len(dates), 1)
+    svr_lane =SVR(kernel= 'linear', C=1e3)
+    svr_poly = SVR(kernel= 'poly', C=1e3, degree = 2 )
+    
