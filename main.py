@@ -2,6 +2,9 @@ import numpy as np
 import csv
 from sklearn.svm import SVR
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("Agg")
+
 
 dates = []
 prices = []
@@ -36,7 +39,8 @@ def predict_prices(dates, prices, x):
     plt.ylabel('Close Price')
     plt.title('Support Vector Regression')
     plt.legend()
-    plt.show()
+    plt.savefig("plot.png")
+
 
     return svr_rbf.predict([[x]])[0], svr_lin.predict([[x]])[0], svr_poly.predict([[x]])[0]
 
