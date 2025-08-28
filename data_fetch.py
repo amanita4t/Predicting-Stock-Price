@@ -4,4 +4,4 @@ import yfinance as yf
 data = yf.download("AAPL", period="1y")
 
 print(data.head())
-data.to_csv("AAPL_1year.csv")
+data.to_csv("AAPL_1year_sample.csv")
